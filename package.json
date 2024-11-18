@@ -21,6 +21,7 @@
     "@pinia/colada": "^0.12.1",
     "@pinia/colada-nuxt": "^0.0.3",
     "@pinia/nuxt": "^0.7.0",
+    "@vueuse/core": "^11.2.0",
     "better-auth": "^0.8.7-beta.3",
     "drizzle-kit": "^0.28.1",
     "drizzle-orm": "^0.36.3",
