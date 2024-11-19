@@ -25,7 +25,7 @@ export function serverAuth() {
       },
       socialProviders: {
         google: {
-          clientId: process.env.GITHUBGOOGLE_CLIENT_ID_CLIENT_ID!,
+          clientId: process.env.GOOGLE_CLIENT_ID!,
           clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
         },
       },
