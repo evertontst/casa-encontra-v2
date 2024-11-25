@@ -1,4 +1,6 @@
 <template>
+  <NuxtRouteAnnouncer />
+  <NuxtLoadingIndicator />
   <NuxtLayout>
     <UContainer>
       <NuxtPage />

@@ -1,28 +1,5 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: {
-    enabled: true
-  },
-  future: { compatibilityVersion: 4 },
-  compatibilityDate: '2024-07-30',
-  hub: {
-    database: true
-  },
-  colorMode: {
-    preference: 'light'
-  },
-  eslint: {
-    config: {
-      stylistic: {
-        quotes: 'single',
-        commaDangle: 'never'
-      }
-    }
-  },
-  hub: {
-    database: true,
-    kv: true,
-  },
   modules: [
     '@nuxthub/core',
     '@nuxt/ui',
@@ -32,18 +9,38 @@ export default defineNuxtConfig({
     '@pinia/colada-nuxt',
     '@nuxtjs/tailwindcss'
   ],
-   runtimeConfig: {
+  devtools: {
+    enabled: true
+  },
+  css: [
+    '@/assets/css/app.css'
+  ],
+  colorMode: {
+    preference: 'light'
+  },
+  runtimeConfig: {
     public: {
       auth: {
         redirectUserTo: '/user',
-        redirectGuestTo: '/',
-      },
-    },
+        redirectGuestTo: '/login'
+      }
+    }
   },
-   dir: {
+  dir: {
     app: 'app'
   },
-  css: [
-    '@/assets/css/app.css',
-  ]
+  future: { compatibilityVersion: 4 },
+  compatibilityDate: '2024-07-30',
+  hub: {
+    database: true,
+    kv: true
+  },
+  eslint: {
+    config: {
+      stylistic: {
+        quotes: 'single',
+        commaDangle: 'never'
+      }
+    }
+  }
 })

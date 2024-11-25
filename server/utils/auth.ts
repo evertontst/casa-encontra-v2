@@ -8,33 +8,33 @@ export function serverAuth() {
     _auth = betterAuth({
       database: {
         dialect: new D1Dialect({
-          database: hubDatabase(),
+          database: hubDatabase()
         }),
-        type: 'sqlite',
+        type: 'sqlite'
       },
       secondaryStorage: {
         get: key => hubKV().getItemRaw(`_auth:${key}`),
         set: (key, value, ttl) => {
           return hubKV().set(`_auth:${key}`, value, { ttl })
         },
-        delete: key => hubKV().del(`_auth:${key}`),
+        delete: key => hubKV().del(`_auth:${key}`)
       },
       baseURL: getBaseURL(),
       emailAndPassword: {
-        enabled: true,
+        enabled: true
       },
       socialProviders: {
         google: {
           clientId: process.env.GOOGLE_CLIENT_ID!,
-          clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-        },
+          clientSecret: process.env.GOOGLE_CLIENT_SECRET!
+        }
       },
       account: {
         accountLinking: {
-          enabled: true,
-        },
+          enabled: true
+        }
       },
-      plugins: [anonymous(), admin()],
+      plugins: [anonymous(), admin()]
     })
   }
   return _auth

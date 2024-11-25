@@ -1,21 +1,23 @@
 <template>
-    <div>
-        <h1>test</h1>
-        <!-- <TheSlider /> -->
-        <!-- <homeTrustedBy /> -->
-        <!-- <homeProperties /> -->
-        <!-- <homeSearchByArea /> -->
-        <!-- <homePropertiesForSale /> -->
-        <!-- <homePropertiesForRent /> -->
-        <!-- <homeMeetAgents /> -->
-        <!-- <homeContactForm /> -->
-        <!-- <homeFromOurBlog />
+  <div>
+    <h1>test index</h1>
+    <!-- <TheSlider /> -->
+    <!-- <homeTrustedBy /> -->
+    <!-- <homeProperties /> -->
+    <!-- <homeSearchByArea /> -->
+    <!-- <homePropertiesForSale /> -->
+    <!-- <homePropertiesForRent /> -->
+    <!-- <homeMeetAgents /> -->
+    <!-- <homeContactForm /> -->
+    <!-- <homeFromOurBlog />
     <homeFromOurCustomers /> -->
-    </div>
+  </div>
 </template>
 
 <script lang="ts" setup>
-
+definePageMeta({
+  auth: false
+})
 </script>
 
 <style></style>

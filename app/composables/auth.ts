@@ -3,7 +3,7 @@ import { createAuthClient } from 'better-auth/client'
 import type {
   InferSessionFromClient,
   InferUserFromClient,
-  ClientOptions,
+  ClientOptions
 } from 'better-auth/client'
 import type { RouteLocationRaw } from 'vue-router'
 
@@ -19,13 +19,13 @@ export function useAuth() {
   const client = createAuthClient({
     baseURL: url.origin,
     fetchOptions: {
-      headers,
-    },
+      headers
+    }
   })
 
   const options = defu(useRuntimeConfig().public.auth as Partial<RuntimeAuthConfig>, {
     redirectUserTo: '/',
-    redirectGuestTo: '/',
+    redirectGuestTo: '/'
   })
   const session = useState<InferSessionFromClient<ClientOptions> | null>('auth:session', () => null)
   const user = useState<InferUserFromClient<ClientOptions> | null>('auth:user', () => null)
@@ -39,8 +39,8 @@ export function useAuth() {
     sessionFetching.value = true
     const { data } = await client.getSession({
       fetchOptions: {
-        headers,
-      },
+        headers
+      }
     })
     session.value = data?.session || null
     user.value = data?.user || null
@@ -72,6 +72,6 @@ export function useAuth() {
     },
     options,
     fetchSession,
-    client,
+    client
   }
 }
